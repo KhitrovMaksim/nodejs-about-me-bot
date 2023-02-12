@@ -16,20 +16,15 @@ const start = () => {
   bot.on('message', async (msg) => {
     const { text } = msg;
     const chatId = msg.chat.id;
+    const methodsDict = {
+      '/start': commands.getSerializedList(),
+      '/help': commands.getSerializedList(),
+      '/about': informationAboutMe.getSerializedPersonalData(),
+      '/links': informationAboutMe.getSerializedPersonalData(),
+    };
+    const message = methodsDict[text] || `"${text}" is not a command. Please try again!`;
 
-    if (text === '/start' || text === '/help') {
-      return bot.sendMessage(chatId, commands.getSerializedList());
-    }
-
-    if (text === '/about') {
-      return bot.sendMessage(chatId, informationAboutMe.getSerializedPersonalData());
-    }
-
-    if (text === '/links') {
-      return bot.sendMessage(chatId, informationAboutMe.getSerializedSocialNetworks());
-    }
-
-    return bot.sendMessage(chatId, `"${text}" is not a command. Please try again!`);
+    return bot.sendMessage(chatId, message);
   });
 };
 
