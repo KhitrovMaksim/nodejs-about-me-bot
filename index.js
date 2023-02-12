@@ -20,7 +20,7 @@ const start = () => {
       '/start': commands.getSerializedList(),
       '/help': commands.getSerializedList(),
       '/about': informationAboutMe.getSerializedPersonalData(),
-      '/links': informationAboutMe.getSerializedPersonalData(),
+      '/links': informationAboutMe.getSerializedSocialNetworks(),
     };
     const message = methodsDict[text] || `"${text}" is not a command. Please try again!`;
 
