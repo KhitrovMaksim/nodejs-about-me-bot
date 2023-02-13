@@ -33,8 +33,4 @@ const start = () => {
   });
 };
 
-process.on('exit', () => {
-  logger.info('Bot stopped');
-});
-
 start();

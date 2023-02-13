@@ -1,13 +1,21 @@
 const pino = require('pino');
 
-const logger = pino({
-  transport: {
-    target: process.env.PRETTY_LOGGING || 'pino-pretty',
-    options: {
-      translateTime: 'SYS:dd-mm-yyyy HH:MM:ss',
-      colorize: true,
-    },
+const transportToConsole = pino.transport({
+  target: 'pino-pretty',
+  options: {
+    translateTime: 'SYS:dd-mm-yyyy HH:MM:ss',
+    colorize: true,
   },
-}, pino.destination('./combined.log'));
+});
+
+const transportToFile = pino.transport({
+  target: 'pino/file',
+  options: {
+    destination: './log/application.log',
+    mkdir: true,
+  },
+});
+
+const logger = process.env.PRETTY_LOGGING === 'pino-pretty' ? pino(transportToConsole) : pino(transportToFile);
 
 module.exports = logger;
