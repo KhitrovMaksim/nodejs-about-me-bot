@@ -10,7 +10,7 @@
     "telegram",
     "bot"
   ],
-    "homepage": "http://git.foxminded.ua/foxstudent103641/nodejs-about-me-bot",
+  "homepage": "http://git.foxminded.ua/foxstudent103641/nodejs-about-me-bot",
   "repository": {
     "type": "git",
     "url": "http://git.foxminded.ua/foxstudent103641/nodejs-about-me-bot"
@@ -20,7 +20,8 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "lint": "eslint . && prettier -c \"**/*.js\"",
-    "format": "eslint . --fix && prettier --write \"**/*.js\""
+    "format": "eslint . --fix && prettier --write \"**/*.js\"",
+    "prepare": "husky install"
   },
   "dependencies": {
     "node-telegram-bot-api": "^0.61.0",
@@ -37,7 +38,7 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "lint-staged": "^13.1.0",
     "nodemon": "^2.0.20",
     "prettier": "2.8.3"
