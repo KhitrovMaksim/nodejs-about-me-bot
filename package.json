@@ -2,7 +2,7 @@
   "name": "nodejs-about-me-bot",
   "version": "2.0.0",
   "description": "3.1 About me Bot",
-  "author": "Makism Khitrov <khitrov.maks@gmail.com>",
+  "author": "Maksim Khitrov <khitrov.maks@gmail.com>",
   "license": "MIT",
   "keywords": [
     "nodejs",
@@ -10,7 +10,7 @@
     "telegram",
     "bot"
   ],
-  "homepage": "http://git.foxminded.ua/foxstudent103641/nodejs-about-me-bot",
+    "homepage": "http://git.foxminded.ua/foxstudent103641/nodejs-about-me-bot",
   "repository": {
     "type": "git",
     "url": "http://git.foxminded.ua/foxstudent103641/nodejs-about-me-bot"
